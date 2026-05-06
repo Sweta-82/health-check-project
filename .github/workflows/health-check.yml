@@ -1,0 +1,12 @@
+name: Daily Health Check
+on:
+  schedule:
+    -cron: '0 6 * * *'
+  workflow_dispatch:
+
+jobs:
+  health-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        run: curl -f https://health-check-project-5ndg.onrender.com/
